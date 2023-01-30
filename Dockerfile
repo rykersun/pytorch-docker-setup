@@ -14,6 +14,8 @@ RUN pip3 install \
 ADD simultaneous_semantic_and_instance_segmentation/ /workspace/simultaneous_semantic_and_instance_segmentation/
 RUN cd /workspace/simultaneous_semantic_and_instance_segmentation/detectron2/ && python setup.py install
 
+RUN ln -s /workspace/simultaneous_semantic_and_instance_segmentation/ /root/simultaneous_semantic_and_instance_segmentation/
+
 # ssh setting
 RUN echo "root:123456" >> ~/passwdfile && \
     chpasswd -c SHA512 < ~/passwdfile && \
