@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:latest
+FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-runtime
 MAINTAINER rykersun
 
 RUN apt-get update && apt-get install -y \
@@ -11,10 +11,10 @@ RUN pip3 install \
     cython \
     && rm -rf ~/.cache/pip
 
-ADD simultaneous_semantic_and_instance_segmentation/ /workspace/simultaneous_semantic_and_instance_segmentation/
-RUN cd /workspace/simultaneous_semantic_and_instance_segmentation/detectron2/ && python setup.py install
+# ADD simultaneous_semantic_and_instance_segmentation/ /workspace/simultaneous_semantic_and_instance_segmentation/
+# RUN cd /workspace/simultaneous_semantic_and_instance_segmentation/detectron2/ && python setup.py install
 
-RUN ln -s /workspace/simultaneous_semantic_and_instance_segmentation/ /root/simultaneous_semantic_and_instance_segmentation
+# RUN ln -s /workspace/simultaneous_semantic_and_instance_segmentation/ /root/simultaneous_semantic_and_instance_segmentation
 
 # ssh setting
 RUN echo "root:123456" >> ~/passwdfile && \
