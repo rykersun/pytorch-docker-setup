@@ -1,7 +1,12 @@
-# Setup
+# Clone
 
 ```bash
-./clone.sh
+git clone --recurse-submodules git@github.com:rykersun/pytorch-docker-setup.git
+```
+
+# Build
+
+```bash
 ./build_docker.sh
 ```
 
