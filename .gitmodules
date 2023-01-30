@@ -1,0 +1,3 @@
+[submodule "simultaneous_semantic_and_instance_segmentation"]
+	path = simultaneous_semantic_and_instance_segmentation
+	url = https://github.com/lihaoliu-cambridge/simultaneous_semantic_and_instance_segmentation.git
