@@ -5,11 +5,30 @@ FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-runtime
 RUN apt-get update && apt-get install -y \
     build-essential \
     openssh-server \
+    python3-pip \
+    python3-dev \
+    vim \
+    git \
+    wget \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Install necessary python packages
 RUN pip3 install --upgrade pip
 RUN pip3 install \
+    numpy \
+    scipy \
+    matplotlib \
+    pandas \
+    scikit-learn \
+    scikit-image \
+    jupyter \
+    jupyterlab \
+    seaborn \
+    tqdm \
+    opencv-python \
+    ipython \
+    ipdb \
     cython \
     && rm -rf ~/.cache/pip
 
